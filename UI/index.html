@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>CloudApplicationUI</title>
+	<link rel="stylesheet" type="text/css" href="vendors/style.css">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">	 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body background="resources/images/wodden.jpg">
+
+
+<nav class="navbar navbar-default">
+
+  <div class="container-fluid">
+   
+    <div class="nav navbar-nav">
+      <!--button to upload photos-->
+      <button type="button" onclick="" class="btn navbar-btn">Upload</button>
+      <!--button to share photos with others -->
+
+      <button type="button" class="btn navbar-btn" onclick="">Share</button>
+   </div>
+
+    <div class="nav navbar-nav navbar-right">
+    	<!-- Button to open the signup modal form -->
+ 
+    <button onclick="document.getElementById('id01').style.display='block'" class="btn navrbar-btn">Sign Up</button>
+	<!-- Button to open the modal login form -->
+	<button onclick="document.getElementById('id02').style.display='block'" class="btn navbar-btn">Login</button>
+   </div>
+
+  </div>
+</nav>
+
+<h1>Welcome to our image collage!</h1>
+
+<!-- The Modal -->
+<div id="id02" class="modal">
+  <span onclick="document.getElementById('id02').style.display='none'" 
+class="close" title="Close Modal">&times;</span>
+
+  <!-- Modal Content -->
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <button type="submit">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+</div>
+<!-- The Modal (contains the Sign Up form) -->
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="container">
+      <label><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      <input type="checkbox" checked="checked"> Remember me
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+	</div>
+
+</header>
+
+<section id="photos">
+    <img src="resources/images/1.jpg">
+     <img src="resources/images/2.jpg">
+    <img src="resources/images/3.jpg">
+    <img src="resources/images/4.jpg">
+    <img src="resources/images/5.jpg">
+    <img src="resources/images/6.jpg">
+</section>
+</div>
+<!-- Button to open the modal login form -->
+
+
+<script type="text/javascript" src="vendors/script.js"></script>
+
+</body>
+</html>
