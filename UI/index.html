@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<title>CloudApplicationUI</title>
 	<link rel="stylesheet" type="text/css" href="vendors/style.css">
@@ -18,7 +19,8 @@
    
     <div class="nav navbar-nav">
       <!--button to upload photos-->
-      <button type="button" onclick="" class="btn navbar-btn">Upload</button>
+      <button type="button" onclick="document.getElementById('upload').style.display='block'" class="btn navbar-btn">Upload</button>
+
       <!--button to share photos with others -->
 
       <button type="button" class="btn navbar-btn" onclick="">Share</button>
@@ -36,6 +38,25 @@
 </nav>
 
 <h1>Welcome to our image collage!</h1>
+
+
+<div id="upload" class="modal">
+	<span onclick="document.getElementById('upload').style.display='none' " class="close" title="close Modal">&times;</span>
+<form class="modal-content animate">
+    <div class="container">
+      <label><b>Upload your images:</b></label>
+      <input type="file" name="upload">
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('upload').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="uploadSubmit"><b>Upload<b></button>
+      </div>
+    </div>
+  </form>
+
+</div>
+
+
 
 <!-- The Modal -->
 <div id="id02" class="modal">
@@ -90,15 +111,21 @@ class="close" title="Close Modal">&times;</span>
 	</div>
 
 </header>
+<div id="photoCollage"><!-- Massimo Margagnoni -->
+<img src="http://c1.staticflickr.com/9/8450/8026519634_f33f3724ea_b.jpg">
+<img src="http://c2.staticflickr.com/8/7218/7209301894_c99d3a33c2_h.jpg">
+<img src="http://c2.staticflickr.com/8/7231/6947093326_df216540ff_b.jpg">
 
-<section id="photos">
-    <img src="resources/images/1.jpg">
-     <img src="resources/images/2.jpg">
-    <img src="resources/images/3.jpg">
-    <img src="resources/images/4.jpg">
-    <img src="resources/images/5.jpg">
-    <img src="resources/images/6.jpg">
-</section>
+<!-- Giuseppe Milo -->
+<img src="http://c1.staticflickr.com/9/8788/17367410309_78abb9e5b6_b.jpg">
+<img src="http://c2.staticflickr.com/6/5814/20700286354_762c19bd3b_b.jpg">
+<img src="http://c2.staticflickr.com/6/5647/21137202535_404bf25729_b.jpg">
+
+<!-- GörlitzPhotography -->
+<img src="http://c2.staticflickr.com/6/5588/14991687545_5c8e1a2e86_b.jpg">
+<img src="http://c2.staticflickr.com/4/3888/14878097108_5997041006_b.jpg">
+<img src="http://c2.staticflickr.com/8/7579/15482110477_0b0e9e5421_b.jpg">
+
 </div>
 <!-- Button to open the modal login form -->
 
