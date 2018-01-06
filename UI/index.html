@@ -45,11 +45,11 @@
 <form class="modal-content animate">
     <div class="container">
       <label><b>Upload your images:</b></label>
-      <input type="file" name="upload">
+      <input type="file" name="upload" onchange="encodeImageFileAsURL(this)">
 
       <div class="clearfix">
         <button type="button" onclick="document.getElementById('upload').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="uploadSubmit"><b>Upload<b></button>
+        <button type="button" id="uploadImageButton" class="uploadSubmit"><b>Upload<b></button>
       </div>
     </div>
   </form>
@@ -131,6 +131,30 @@ class="close" title="Close Modal">&times;</span>
 
 
 <script type="text/javascript" src="vendors/script.js"></script>
+<script>
+    var reader;
+    function encodeImageFileAsURL(element) {
+        var file = element.files[0];
+        reader = new FileReader();
+        reader.readAsDataURL(file);
+        console.log('Result: ', reader.result);
+    }
+    $(document.getElementById("uploadImageButton")).click(function(){
+        $.ajax({
+          url:"http://localhost:52232/api/DataManagement/UploadImage",
+          type:"POST",
+          data:JSON.stringify({_id: "test-creation-1236",caption: "test",name: "test-1",imageB64:reader.result}),
+          contentType:"application/json; charset=utf-8",
+          dataType:"json"
+        })});
+        //$.post("http://localhost:52232/api/DataManagement/UploadImage", JSON.stringify(
+        //    {
+        //        _id: "test-creation-123",
+        //        caption: "test", name: "test-1",
+        //        imageB64: reader.result
+        //    }))
+        //});
+</script>
 
 </body>
 </html>
