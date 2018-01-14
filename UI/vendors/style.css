@@ -172,3 +172,9 @@ img{
     margin: 1.66%;
 
 }
+#loginBtns{
+    color: black;
+    font-style: bold;
+    margin-right: 20px;
+    font-size-adjust: 17;
+}

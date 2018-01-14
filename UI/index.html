@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<title>CloudApplicationUI</title>
-	<link rel="stylesheet" type="text/css" href="vendors/style.css">
+	<link rel="stylesheet" type="text/css" href="vendors/style.css">  
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">	 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -23,15 +23,16 @@
 
       <!--button to share photos with others -->
 
-      <button type="button" class="btn navbar-btn" onclick="">Share</button>
+      <button type="button" class="btn navbar-btn" onclick="document.getElementById('subscribe').style.display='block'">Subscribe</button>
    </div>
 
     <div class="nav navbar-nav navbar-right">
     	<!-- Button to open the signup modal form -->
- 
+ <div id="loginBtns">
     <button onclick="document.getElementById('Register').style.display='block'" class="btn navrbar-btn">Sign Up</button>
 	<!-- Button to open the modal login form -->
 	<button onclick="document.getElementById('Login').style.display='block'" class="btn navbar-btn">Login</button>
+</div>
    </div>
 
   </div>
@@ -58,6 +59,22 @@
 
 </div>
 
+<div id="subscribe" class="modal">
+  <span onclick="document.getElementById('subscribe').style.display='none' " class="close" title="close Modal">&times;</span>
+<form class="modal-content animate">
+    <div class="container">
+      <label><b>Enter the user name you want to subscribe for:</b></label>
+    </br>
+     <input type="text"  id="subscribee" style="width: 50%; padding: 10px; margin-right: 100px;">
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('subscribe').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="button" id="subscribeBtn"><b>Subscribe<b></button>
+      </div>
+    </div>
+  </form>
+
+</div>
+
 
 
 <!-- The Modal -->
@@ -78,7 +95,7 @@ class="close" title="Close Modal">&times;</span>
       <label><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" id="log_psw" required>
 
-      <button type="submit" id="loginBtn">Login</button>
+      <button type="button" id="loginBtn">Login</button>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
@@ -88,6 +105,7 @@ class="close" title="Close Modal">&times;</span>
   </form>
 </div>
 </div>
+
 <!-- The Modal (contains the Sign Up form) -->
 <div id="Register" class="modal">
   <span onclick="document.getElementById('Register').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -104,11 +122,12 @@ class="close" title="Close Modal">&times;</span>
 
       <div class="clearfix">
         <button type="button" onclick="document.getElementById('Register').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn" id="registerBtn">Sign Up</button>
+        <button type="button" class="signupbtn" id="registerBtn">Sign Up</button>
       </div>
     </div>
   </form>
 	</div>
+
 
 </header>
 <div id="photoCollage"><!-- Massimo Margagnoni -->
