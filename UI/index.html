@@ -1,165 +1,176 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<title>CloudApplicationUI</title>
-	<link rel="stylesheet" type="text/css" href="vendors/style.css">  
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">	 
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudApplicationUI</title>
+    <link rel="stylesheet" type="text/css" href="vendors/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="vendors/script.js"></script>
 </head>
 
-<body background="resources/images/wodden.jpg">
-
+<body background="resources/images/wodden.jpg" onload="checkCookie()">
 
 <nav class="navbar navbar-default">
 
-  <div class="container-fluid">
-   
-    <div class="nav navbar-nav">
-      <!--button to upload photos-->
-      <button type="button" onclick="document.getElementById('upload').style.display='block'" class="btn navbar-btn">Upload</button>
+    <div class="container-fluid">
 
-      <!--button to share photos with others -->
+        <div class="nav navbar-nav">
+            <!--button to upload photos-->
+            <button type="button" onclick="document.getElementById('upload').style.display='block'"
+                    class="btn navbar-btn">Upload
+            </button>
 
-      <button type="button" class="btn navbar-btn" onclick="document.getElementById('subscribe').style.display='block'">Subscribe</button>
-   </div>
+            <!--button to share photos with others -->
+            <button type="button" class="btn navbar-btn"
+                    onclick="document.getElementById('subscribe').style.display='block'">Subscribe
+            </button>
+        </div>
 
-    <div class="nav navbar-nav navbar-right">
-    	<!-- Button to open the signup modal form -->
- <div id="loginBtns">
-    <button onclick="document.getElementById('Register').style.display='block'" class="btn navrbar-btn">Sign Up</button>
-	<!-- Button to open the modal login form -->
-	<button onclick="document.getElementById('Login').style.display='block'" class="btn navbar-btn">Login</button>
-</div>
-   </div>
+        <div class="nav navbar-nav navbar-right">
+            <!-- Button to open the signup modal form -->
+            <div id="loginBtns">
+                <button onclick="document.getElementById('Register').style.display='block'" class="btn navrbar-btn">Sign
+                    Up
+                </button>
+                <!-- Button to open the modal login form -->
+                <button onclick="document.getElementById('Login').style.display='block'" class="btn navbar-btn">Login
+                </button>
+            </div>
+        </div>
 
-  </div>
+    </div>
 </nav>
 
 <h1>Welcome to our image collage!</h1>
 
 
 <div id="upload" class="modal">
-	<span onclick="document.getElementById('upload').style.display='none' " class="close" title="close Modal">&times;</span>
-<form class="modal-content animate">
-    <div class="container">
-      <label><b>Upload your images:</b></label>
-    </br>
-     <label>Caption your image:</label>
-     <input type="text" name="caption" style="width: 50%; padding: 10px; margin-right: 100px;">
-      <input type="file" name="upload" onchange="encodeImageFileAsURL(this)">
-      <div class="clearfix">
-        <button type="button" onclick="document.getElementById('upload').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="button" id="uploadImageButton" class="uploadSubmit"><b>Upload<b></button>
-      </div>
-    </div>
-  </form>
+    <span onclick="document.getElementById('upload').style.display='none' " class="close"
+          title="close Modal">&times;</span>
+    <form class="modal-content animate">
+        <div class="container">
+            <label><b>Upload your images:</b></label>
+            </br>
+            <label>Caption your image:</label>
+            <input type="text" name="caption" style="width: 50%; padding: 10px; margin-right: 100px;">
+            <input type="file" name="upload" onchange="encodeImageFileAsURL(this)">
+            <div class="clearfix">
+                <button type="button" onclick="document.getElementById('upload').style.display='none'"
+                        class="cancelbtn">Cancel
+                </button>
+                <button type="button" id="uploadImageButton" class="uploadSubmit"><b>Upload<b></button>
+            </div>
+        </div>
+    </form>
 
 </div>
 
 <div id="subscribe" class="modal">
-  <span onclick="document.getElementById('subscribe').style.display='none' " class="close" title="close Modal">&times;</span>
-<form class="modal-content animate">
-    <div class="container">
-      <label><b>Enter the user name you want to subscribe for:</b></label>
-    </br>
-     <input type="text"  id="subscribee" style="width: 50%; padding: 10px; margin-right: 100px;">
-      <div class="clearfix">
-        <button type="button" onclick="document.getElementById('subscribe').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="button" id="subscribeBtn"><b>Subscribe<b></button>
-      </div>
-    </div>
-  </form>
+    <span onclick="document.getElementById('subscribe').style.display='none' " class="close"
+          title="close Modal">&times;</span>
+    <form class="modal-content animate">
+        <div class="container">
+            <label><b>Enter the user name you want to subscribe for:</b></label>
+            </br>
+            <input type="text" id="subscribee" style="width: 50%; padding: 10px; margin-right: 100px;">
+            <div class="clearfix">
+                <button type="button" onclick="document.getElementById('subscribe').style.display='none'"
+                        class="cancelbtn">Cancel
+                </button>
+                <button type="button" id="subscribeBtn"><b>Subscribe<b></button>
+            </div>
+        </div>
+    </form>
 
 </div>
-
 
 
 <!-- The Modal -->
 <div id="Login" class="modal">
-  <span onclick="document.getElementById('Login').style.display='none'" 
-class="close" title="Close Modal">&times;</span>
+  <span onclick="document.getElementById('Login').style.display='none'"
+        class="close" title="Close Modal">&times;</span>
 
-  <!-- Modal Content -->
-  <form class="modal-content animate">
-    <div class="imgcontainer">
-      <img src="img_avatar2.png" alt="Avatar" class="avatar">
-    </div>
+    <!-- Modal Content -->
+    <form class="modal-content animate">
+        <div class="imgcontainer">
+            <img src="img_avatar2.png" alt="Avatar" class="avatar">
+        </div>
 
-    <div class="container">
-      <label><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" id="log_uname" required>
+        <div class="container">
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" id="log_uname" required>
 
-      <label><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" id="log_psw" required>
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" id="log_psw" required>
 
-      <button type="button" id="loginBtn">Login</button>
-    </div>
+            <button type="button" id="loginBtn">Login</button>
+        </div>
 
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('Login').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
-</div>
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('Login').style.display='none'" class="cancelbtn">
+                Cancel
+            </button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+    </form>
 </div>
 
 <!-- The Modal (contains the Sign Up form) -->
 <div id="Register" class="modal">
-  <span onclick="document.getElementById('Register').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content animate" action="/action_page.php">
-    <div class="container">
-      <label><b>Email</b></label>
-      <input type="text" placeholder="Enter User Name:" name="uname" id="reg_uname" required>
+    <span onclick="document.getElementById('Register').style.display='none'" class="close"
+          title="Close Modal">&times;</span>
+    <form class="modal-content animate" action="/action_page.php">
+        <div class="container">
+            <label><b>Email</b></label>
+            <input type="text" placeholder="Enter User Name:" name="uname" id="reg_uname" required>
 
-      <label><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" id="reg_psw" required>
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" id="reg_psw" required>
 
-      <label><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+            <label><b>Repeat Password</b></label>
+            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
 
-      <div class="clearfix">
-        <button type="button" onclick="document.getElementById('Register').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="button" class="signupbtn" id="registerBtn">Sign Up</button>
-      </div>
-    </div>
-  </form>
-	</div>
+            <div class="clearfix">
+                <button type="button" onclick="document.getElementById('Register').style.display='none'"
+                        class="cancelbtn">Cancel
+                </button>
+                <button type="button" class="signupbtn" id="registerBtn">Sign Up</button>
+            </div>
+        </div>
+    </form>
+</div>
 
 
-</header>
-<div id="photoCollage"><!-- Massimo Margagnoni -->
-<img src="http://c1.staticflickr.com/9/8450/8026519634_f33f3724ea_b.jpg">
-<img src="http://c2.staticflickr.com/8/7218/7209301894_c99d3a33c2_h.jpg">
-<img src="http://c2.staticflickr.com/8/7231/6947093326_df216540ff_b.jpg">
+<div id="photoCollage">
+    <!-- Massimo Margagnoni -->
+    <img src="http://c1.staticflickr.com/9/8450/8026519634_f33f3724ea_b.jpg">
+    <img src="http://c2.staticflickr.com/8/7218/7209301894_c99d3a33c2_h.jpg">
+    <img src="http://c2.staticflickr.com/8/7231/6947093326_df216540ff_b.jpg">
 
-<!-- Giuseppe Milo -->
-<img src="http://c1.staticflickr.com/9/8788/17367410309_78abb9e5b6_b.jpg">
-<img src="http://c2.staticflickr.com/6/5814/20700286354_762c19bd3b_b.jpg">
-<img src="http://c2.staticflickr.com/6/5647/21137202535_404bf25729_b.jpg">
+    <!-- Giuseppe Milo -->
+    <img src="http://c1.staticflickr.com/9/8788/17367410309_78abb9e5b6_b.jpg">
+    <img src="http://c2.staticflickr.com/6/5814/20700286354_762c19bd3b_b.jpg">
+    <img src="http://c2.staticflickr.com/6/5647/21137202535_404bf25729_b.jpg">
 
-<!-- GörlitzPhotography -->
-<img src="http://c2.staticflickr.com/6/5588/14991687545_5c8e1a2e86_b.jpg">
-<img src="http://c2.staticflickr.com/4/3888/14878097108_5997041006_b.jpg">
-<img src="http://c2.staticflickr.com/8/7579/15482110477_0b0e9e5421_b.jpg">
-
+    <!-- GörlitzPhotography -->
+    <img src="http://c2.staticflickr.com/6/5588/14991687545_5c8e1a2e86_b.jpg">
+    <img src="http://c2.staticflickr.com/4/3888/14878097108_5997041006_b.jpg">
+    <img src="http://c2.staticflickr.com/8/7579/15482110477_0b0e9e5421_b.jpg">
 </div>
 <!-- Button to open the modal login form -->
 
 
-<script type="text/javascript" src="vendors/script.js"></script>
 <script>
-   
-
-        //$.post("http://localhost:52232/api/DataManagement/UploadImage", JSON.stringify(
-        //    {
-        //        _id: "test-creation-123",
-        //        caption: "test", name: "test-1",
-        //        imageB64: reader.result
-        //    }))
-        //});
+    //$.post("http://localhost:52232/api/DataManagement/UploadImage", JSON.stringify(
+    //    {
+    //        _id: "test-creation-123",
+    //        caption: "test", name: "test-1",
+    //        imageB64: reader.result
+    //    }))
+    //});
 </script>
 
 </body>
